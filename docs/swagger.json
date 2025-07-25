@@ -1,0 +1,12 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Api desenvolvida com foco em desempenho e escalabilidade, utilizando Go e Fiber como framework web.",
+        "title": "Api de finanças feita com Go e Fiber",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "paths": {}
+}

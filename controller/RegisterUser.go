@@ -9,6 +9,12 @@ import (
 	"github.com/google/uuid"
 )
 
+// @title Registro de Usuário
+// @description Endpoint para registrar um novo usuário
+// @version 1.0
+// @host localhost:3000
+// @BasePath /register
+
 func RegisterUser(c *fiber.Ctx) error {
 	var input struct {
 		Name     string `json:"name"`

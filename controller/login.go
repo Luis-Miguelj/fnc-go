@@ -65,6 +65,7 @@ func Login(c *fiber.Ctx) error {
 		"message": "Login successful",
 		"token":   tokenString,
 		"user": fiber.Map{
+			"id":   user.Id,
 			"name": user.Name,
 		}})
 }

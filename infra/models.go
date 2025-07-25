@@ -6,6 +6,7 @@ type User struct {
 	Email     string `gorm:"not null;unique"`
 	Password  string `gorm:"not null"`
 	CreatedAt string
+	Admin     bool
 }
 
 type Finance struct {

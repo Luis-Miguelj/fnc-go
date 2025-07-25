@@ -1,0 +1,9 @@
+basePath: /
+host: localhost:3000
+info:
+  contact: {}
+  description: Esta é a documentação da minha API em Go.
+  title: Meu Projeto Go com Swagger
+  version: "1.0"
+paths: {}
+swagger: "2.0"
