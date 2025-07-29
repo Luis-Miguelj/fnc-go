@@ -20,6 +20,7 @@ func main() {
 	app := fiber.New()
 
 	db.Connect()
+
 	db.DB.AutoMigrate(&infra.User{})
 	db.DB.AutoMigrate(&infra.Finance{})
 	db.DB.AutoMigrate(&infra.Category{})
@@ -30,16 +31,19 @@ func main() {
 		AllowHeaders: "Origin, Content-Type, Accept, Authorization",
 	}))
 
-	app.Post("/finance/:userId", controller.CreateFinance)
+	app.Post("/finances/:userId", controller.CreateFinance)
 	app.Post("/register", controller.RegisterUser)
 	app.Post("/login", controller.Login)
 
 	app.Get("/swagger/*", fiberSwagger.WrapHandler)
-	app.Get("/user", controller.GetUser)
+	app.Get("/users", controller.GetUser)
 	app.Get("/finances/:userId", controller.GetFinances)
 	app.Get("/categories", controller.GetCategories)
+	app.Get("/finance-values/:userId", controller.GetFinanceValues)
+	app.Get("/dashboard/:userId", controller.Dashboard)
 
 	app.Put("/category/:id", controller.UpdateCategory)
+	app.Put("/finances/:financeId", controller.UpdateFinance)
 
 	app.Delete("/category/:id", controller.DeleteCategory)
 

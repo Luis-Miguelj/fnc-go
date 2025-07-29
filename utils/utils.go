@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"math"
 	"time"
 
 	"golang.org/x/crypto/bcrypt"
@@ -16,6 +17,10 @@ func CheckPasswordHash(pw, hash string) bool {
 	return err == nil
 }
 
-func GetCurrentTime() string {
-	return time.Now().String()
+func GetCurrentTime() time.Time {
+	return time.Now()
+}
+
+func ArredondarParaDuasCasas(valor float64) float64 {
+	return math.Round(valor*100) / 100
 }
